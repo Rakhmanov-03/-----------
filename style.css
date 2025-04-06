@@ -4,42 +4,49 @@
   box-sizing: border-box;
 }
 
-/* Ekran o'lchamiga mos konteyner */
-.wrapper {
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  background-color: #000; /* qora fon – ixtiyoriy */
 }
 
-/* Asosiy div */
+.scale-container {
+  width: 640px;
+  height: 640px;
+  transform-origin: top left;
+}
+
+/* Media queries orqali avtomatik scale */
+@media (max-width: 640px) {
+  .scale-container {
+    transform: scale(calc(100vw / 640));
+  }
+}
+
 .body {
+  width: 640px;
+  height: 640px;
   background-image: url("./photo_2025-03-24_21-27-19.jpg");
   background-size: cover;
   background-position: center;
-  width: 640px;
-  height: 640px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   position: relative;
 }
 
-/* Tugma */
 button {
-  display: inline-block;
-  font-size: 30px;
   position: absolute;
   top: 200px;
   left: 110px;
+  font-size: 30px;
   background-color: inherit;
   width: 140px;
   height: 45px;
   border-radius: 20px;
   text-align: center;
-  border: 0;
+  border: none;
   box-shadow: 0 4px 10px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
@@ -49,21 +56,9 @@ button a {
   color: black;
   font-weight: 600;
   font-family: 'ABeeZee', sans-serif;
-}
-
-/* Responsive containerni o'zida saqlaydi */
-@media (max-width: 640px) {
-  .body {
-    transform: scale(0.9);
-  }
-}
-@media (max-width: 480px) {
-  .body {
-    transform: scale(0.75);
-  }
-}
-@media (max-width: 360px) {
-  .body {
-    transform: scale(0.6);
-  }
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 45px;
+  text-align: center;
 }
