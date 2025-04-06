@@ -1,20 +1,39 @@
 * {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
-}
-.body {
-  background-image: url("./photo_2025-03-24_21-27-19.jpg");
-  width: 640px;
-  height: 640px;
-  justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
 }
 
+/* Ekran o'lchamiga mos konteyner */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Asosiy div */
+.body {
+  background-image: url("./photo_2025-03-24_21-27-19.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 640px;
+  height: 640px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Tugma */
 button {
   display: inline-block;
   font-size: 30px;
-  margin-top: 200px;
-  margin-left: 110px;
+  position: absolute;
+  top: 200px;
+  left: 110px;
   background-color: inherit;
   width: 140px;
   height: 45px;
@@ -24,9 +43,27 @@ button {
   box-shadow: 0 4px 10px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
+
 button a {
   text-decoration: none;
   color: black;
   font-weight: 600;
-  font-family: ABeeZee sans-serif;
+  font-family: 'ABeeZee', sans-serif;
+}
+
+/* Responsive containerni o'zida saqlaydi */
+@media (max-width: 640px) {
+  .body {
+    transform: scale(0.9);
+  }
+}
+@media (max-width: 480px) {
+  .body {
+    transform: scale(0.75);
+  }
+}
+@media (max-width: 360px) {
+  .body {
+    transform: scale(0.6);
+  }
 }
