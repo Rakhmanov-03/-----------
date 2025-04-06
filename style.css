@@ -1,0 +1,30 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+.body {
+  background-image: url("./photo_2025-03-24_21-27-19.jpg");
+  width: 640px;
+  height: 640px;
+}
+
+button {
+  display: inline-block;
+  font-size: 30px;
+  margin-top: 200px;
+  margin-left: 110px;
+  background-color: inherit;
+  width: 140px;
+  height: 45px;
+  border-radius: 20px;
+  text-align: center;
+  border: 0;
+  box-shadow: 0 4px 10px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+button a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-family: ABeeZee sans-serif;
+}
